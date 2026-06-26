@@ -1,0 +1,56 @@
+# =========================
+# Entornos / secretos
+# =========================
+.env
+**/.env
+backend/.env
+desktop-app/.env
+
+# =========================
+# Archivos temporales del sistema
+# =========================
+storage/
+**/storage/
+uploads/
+exports/
+page_images/
+
+# =========================
+# Python
+# =========================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+
+# =========================
+# Node / React / Vite
+# =========================
+node_modules/
+desktop-app/node_modules/
+dist/
+desktop-app/dist/
+
+# =========================
+# Tauri / Rust
+# =========================
+target/
+desktop-app/src-tauri/target/
+
+# =========================
+# Sistema operativo
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Logs
+# =========================
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

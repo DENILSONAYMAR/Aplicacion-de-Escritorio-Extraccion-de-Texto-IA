@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: docai_postgres
+    environment:
+      POSTGRES_DB: docai
+      POSTGRES_USER: docai_user
+      POSTGRES_PASSWORD: docai_pass
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  backend:
+    build: ../backend
+    container_name: docai_backend
+    env_file:
+      - ../backend/.env
+    ports:
+      - "8000:8000"
+    depends_on:
+      - postgres
+    volumes:
+      - ../backend:/app
+      - ../storage:/storage
+
+volumes:
+  postgres_data:
